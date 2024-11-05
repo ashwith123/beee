@@ -43,5 +43,6 @@ button.addEventListener("click", function () {
 
   // Calculate I3 using the formula
   const ans = E1 / (R1 + R3) + E2 / (R2 + R3);
-  resultDiv.textContent = "Total current: " + ans;
+  resultDiv.textContent =
+    "Total current when 2 voltages source are present: " + ans;
 });
