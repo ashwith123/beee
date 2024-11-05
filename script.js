@@ -14,25 +14,18 @@ const sliderv2 = document.getElementById("v2_slider");
 const button = document.querySelector("button");
 const resultDiv = document.getElementById("result");
 
-slider1.addEventListener("input", function () {
-  r1.value = slider1.value;
-});
+function syncSliderWithInput(slider, input) {
+  slider.addEventListener("input", function () {
+    input.value = slider.value;
+  });
+}
 
-slider2.addEventListener("input", function () {
-  r2.value = slider2.value;
-});
-
-slider3.addEventListener("input", function () {
-  r3.value = slider3.value;
-});
-
-sliderv1.addEventListener("input", function () {
-  v1.value = sliderv1.value;
-});
-
-sliderv2.addEventListener("input", function () {
-  v2.value = sliderv2.value;
-});
+// Use the function for each pair of slider and input
+syncSliderWithInput(slider1, r1);
+syncSliderWithInput(slider2, r2);
+syncSliderWithInput(slider3, r3);
+syncSliderWithInput(sliderv1, voltage1);
+syncSliderWithInput(sliderv2, voltage2);
 
 button.addEventListener("click", function () {
   const R1 = Number(r1.value);
